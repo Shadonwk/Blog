@@ -1,10 +1,29 @@
-*.iws
-*Db.properties
-*Db.script
+# Código compilado
+*.class
+target/**
+
+# Empaquetados
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# Logs
+*.log
+
+# Archivos de Eclipse e IntelliJ IDEA
+.classpath
+.project
 .settings
-eclipse
-stacktrace.log
-target
-/plugins
-/web-app/plugins
-/web-app/WEB-INF/classes
+*.iml
+*.ipr
+*.iws
+.idea
+
+devDb.h2.db
+devDb.lock.db
+devDb.trace.db

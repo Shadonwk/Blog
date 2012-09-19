@@ -19,7 +19,16 @@
           <li><a href="#seguridad">Mi cuenta</a></li>
           <li><a href="#catalogos">Usuarios</a></li>
           <li><a href="#acerca">Acerca de Anelisse</a></li>
-          <li><a href="#salir">Salir</a></li>
+
+            <sec:ifLoggedIn>
+                    <li><a href="#salir">Salir</a></li>
+                    esta loggueado...
+            </sec:ifLoggedIn>
+
+            <sec:ifNotLoggedIn>
+                <g:link controller='login' action='auth'>Login</g:link>
+            </sec:ifNotLoggedIn>
+
         </ul>
       </div><!--/.nav-collapse -->
     </div>

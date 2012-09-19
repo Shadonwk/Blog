@@ -90,4 +90,22 @@ log4j = {
            'net.sf.ehcache.hibernate'
 }
 
+//para el bootstrap de twitter
 grails.plugins.twitterbootstrap.fixtaglib = true
+
+//para Spring Security
+grails.plugins.springsecurity.userLookup.userDomainClassName ='mx.com.robertoleon.seguridad.Usuario'
+grails.plugins.springsecurity.userLookup.authorityJoinClassName = 'mx.com.robertoleon.seguridad.UsuarioRol'
+grails.plugins.springsecurity.authority.className = 'mx.com.robertoleon.seguridad.Rol'
+grails.plugins.springsecurity.password.algorithm = 'MD5'
+
+grails.plugins.springsecurity.securityConfigType = "InterceptUrlMap"
+grails.plugins.springsecurity.interceptUrlMap = [
+        '/js/**':             ['IS_AUTHENTICATED_ANONYMOUSLY'],
+        '/css/**':            ['IS_AUTHENTICATED_ANONYMOUSLY'],
+        '/images/**':         ['IS_AUTHENTICATED_ANONYMOUSLY'],
+        '/login/**':          ['IS_AUTHENTICATED_ANONYMOUSLY'],
+        '/logout/**':         ['IS_AUTHENTICATED_ANONYMOUSLY'],
+        '/*':                 ['IS_AUTHENTICATED_ANONYMOUSLY']
+]
+

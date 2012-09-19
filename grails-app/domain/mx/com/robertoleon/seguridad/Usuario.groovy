@@ -2,6 +2,8 @@ package mx.com.robertoleon.seguridad
 
 class Usuario {
 
+    transient springSecurityService
+
     String username
     String password
     boolean enabled
@@ -19,6 +21,21 @@ class Usuario {
     }
 
     Set<Rol> getAuthorities() {
-        UserRole.findAllByUser(this).collect { it.role } as Set
+        UsuarioRol.findAllByUsuario(this).collect { it.rol } as Set
     }
+
+    def beforeInsert() {
+        encodePassword()
+    }
+
+    def beforeUpdate() {
+        if (isDirty('password')) {
+            encodePassword()
+        }
+    }
+
+    protected void encodePassword() {
+        password = springSecurityService.encodePassword(password)
+    }
+
 }

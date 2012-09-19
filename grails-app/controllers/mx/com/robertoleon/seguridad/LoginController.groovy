@@ -46,9 +46,9 @@ class LoginController {
      * Show the login page.
      */
     def auth = {
-
+        println "llega aqui primero"
         def config = SpringSecurityUtils.securityConfig
-
+         println "verificar si esta loggeado " + springSecurityService.isLoggedIn()
         if (springSecurityService.isLoggedIn()) {
             redirect uri: config.successHandler.defaultTargetUrl
             return
@@ -93,7 +93,7 @@ class LoginController {
      */
     def authfail = {
 
-        def correoElectronico = session[UsernamePasswordAuthenticationFilter.SPRING_SECURITY_LAST_USERNAME_KEY]
+        def username = session[UsernamePasswordAuthenticationFilter.SPRING_SECURITY_LAST_USERNAME_KEY]
         String msg = ''
         def exception = session[WebAttributes.AUTHENTICATION_EXCEPTION]
         if (exception) {

@@ -21,12 +21,11 @@
           <li><a href="#acerca">Acerca de Anelisse</a></li>
 
             <sec:ifLoggedIn>
-                    <li><a href="#salir">Salir</a></li>
-                    esta loggueado...
+                <li><g:link controller='logout' >Salir</g:link></li>
             </sec:ifLoggedIn>
 
             <sec:ifNotLoggedIn>
-                <g:link controller='login' action='auth'>Login</g:link>
+                <li><g:link controller='login' action='auth'>Login</g:link></li>
             </sec:ifNotLoggedIn>
 
         </ul>

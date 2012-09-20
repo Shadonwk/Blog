@@ -38,7 +38,7 @@
    
    <g:layoutHead/>
    <g:javascript library="jquery"/>
-   <r:require modules="bootstrap-responsive-css,jquery-ui"/>
+   <r:require modules="bootstrap-responsive-css,jquery-ui,bootstrap-button"/>
    <r:layoutResources />
   </head>
   <body>

@@ -25,6 +25,7 @@ class Usuario {
     }
 
     def beforeInsert() {
+        enabled = true
         encodePassword()
     }
 

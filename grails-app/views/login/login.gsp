@@ -37,6 +37,13 @@
                 <button type='submit' class="btn btn-primary" id="submit"><g:message code="aplicacion.ingresar"/></button>
             </div>
         </div>
+
+        <div class="control-group">
+            <div class="controls">
+                <g:link controller="usuario" action="create"><g:message code="usuario.nuevo"/></g:link>
+            </div>
+        </div>
+
     </form>
 </div>
 </body>

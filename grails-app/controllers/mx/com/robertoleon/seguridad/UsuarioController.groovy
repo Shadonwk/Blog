@@ -21,8 +21,6 @@ class UsuarioController {
     }
 
     def save(){
-
-
         def usuario = new Usuario(params)
 
         if (!usuario.save(flush: true)) {
@@ -30,25 +28,18 @@ class UsuarioController {
             return
         }
 
-        //def temporal = new UsuarioRol(usuario: usuario, Rol.findByAuthority('ROLE_USER'))
-        println "en busca del rol"   + Rol.findByAuthority('ROLE_USUARIO')
         UsuarioRol.create usuario, Rol.findByAuthority('ROLE_USUARIO'), true
-        println "llega aqui"
-        //println new UsuarioRol(usuario: usuario, rol: Rol.findByAuthority('ROLE_USER')).save(flush: true, insert: true)
-        //temporal.save(flush: true)
-        flash.message = message(code: 'default.created.message', args: [message(code: 'anexo.label', default: 'Anexo'), usuario.id])
+        flash.message = message(code: 'default.created.message', args: [message(code: 'usuario.label', default: 'Usuario'), usuario.id])
         redirect(action: "show", id: usuario.id)
-
     }
 
     def show(Long id) {
         def usuario = Usuario.get(id)
         if (!usuario) {
-            flash.message = message(code: 'default.not.found.message', args: [message(code: 'anexo.label', default: 'Anexo'), id])
+            flash.message = message(code: 'default.not.found.message', args: [message(code: 'usuario.label', default: 'Usuario'), id])
             redirect(action: "list")
             return
         }
-
         [usuario: usuario]
     }
 }

@@ -2,15 +2,12 @@
 <html>
 <head>
     <meta name="layout" content="main">
-    <title><g:message code="anexo.create"/></title>
+    <title><g:message code="usuario.create"/></title>
 </head>
 <body>
-<div id="actions-div">
-    <g:link class="btn btn-mini" action="list"><g:message code="anexo.list"/></g:link>
-</div>
 
 <div id="main-div">
-    <h1><g:message code="anexo.create"/></h1>
+    <h1><g:message code="usuario.create"/></h1>
 
     <g:if test="${flash.message}">
         <div class="alert alert-info">${flash.message}</div>
@@ -30,7 +27,7 @@
 
         <g:render template="form"/>
 
-        <g:submitButton name="create" class="btn btn-primary" value="${message(code: 'default.button.create')}" />
+        <g:submitButton name="create" class="btn btn-primary" value="${message(code: 'estandar.button.create')}" />
     </g:form>
 </div>
 </body>

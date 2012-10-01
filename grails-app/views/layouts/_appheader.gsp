@@ -12,7 +12,7 @@
             <div class="btn-group navbar-text pull-right">
 
 
-                <a class="btn btn-primary" href="#"><i class="icon-user icon-white"></i> User</a>
+                <a class="btn btn-primary" href="#"><i class="icon-user icon-white"></i><sec:username/></a>
                 <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>
                 <ul class="dropdown-menu">
                     <li><a href="#"><i class="icon-pencil"></i> Edit</a></li>
@@ -30,7 +30,7 @@
           <li><a href="#entidades">Blogs</a></li>
           <li><a href="#reportes">Foros de discusión</a></li>
           <li><a href="#graficas">Encuestas</a></li>
-          <li><a href="#catalogos">Usuarios</a></li>
+          <li><g:link controller="usuario" action="list">Usuarios</g:link> </li>
           <li><a href="#acerca">Acerca de Anelisse</a></li>
 
             <sec:ifLoggedIn>

@@ -12,7 +12,7 @@ class BootStrap {
             def rolUsuario = new Rol(authority: 'ROLE_USUARIO').save(failOnError: true)
 
 
-            def testUser = new Usuario(
+            def testAdmin = new Usuario(
                   //  nombreCompleto:"J. Roberto León Cruz",
                     username:"admin",
                     password:"admin",
@@ -28,7 +28,28 @@ class BootStrap {
                     passwordExpired:false
             ).save(failOnError: true)
 
-            UsuarioRol.create testUser, rolAdmin, true
+            def testUser = new Usuario(
+                    //  nombreCompleto:"J. Roberto León Cruz",
+                    username:"user",
+                    password:"user",
+                    // correo: "rleon@sintelti.com.mx",
+                    //  departamento: "sistemas",
+                    //  nivelAcceso: "completo",
+
+                    enabled:true,
+                    //  usuarioAlta:0,
+                    //  fechaAlta:new Date(),
+                    accountExpired:false,
+                    accountLocked:false,
+                    passwordExpired:false
+            ).save(failOnError: true)
+
+            UsuarioRol.create testAdmin, rolAdmin, true
+            UsuarioRol.create testAdmin, rolUsuario, true
+
+            UsuarioRol.create testUser, rolUsuario, true
+
+
 
         }
 

@@ -38,7 +38,7 @@ class PostController {
             return
         }
 
-        [postInstance: postInstance]
+        [post: postInstance]
     }
 
     def edit(Long id) {

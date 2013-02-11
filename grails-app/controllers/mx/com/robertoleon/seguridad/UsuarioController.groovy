@@ -42,4 +42,15 @@ class UsuarioController {
         }
         [usuario: usuario]
     }
+
+    def perfil(Long id){
+        def usuario = Usuario.get(id)
+        if (!usuario) {
+            flash.message = message(code: 'default.not.found.message', args: [message(code: 'usuario.label', default: 'Usuario'), id])
+            redirect(action: "list")
+            return
+        }
+        [usuario: usuario]
+
+    }
 }

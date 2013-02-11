@@ -25,9 +25,12 @@ environments {
     }
     production {
         dataSource {
+            driverClassName = "com.mysql.jdbc.Driver"
             dbCreate = "update"
-            url = "jdbc:h2:prodDb;MVCC=TRUE;LOCK_TIMEOUT=10000"
+            url = "jdbc:mysql://mysql-blogprueba.jelastic.websolute.net.br/devDv?autoReconnect=true"
             pooled = true
+            username= "root"
+            password = "JE606CQ1za"
             properties {
                maxActive = -1
                minEvictableIdleTimeMillis=1800000

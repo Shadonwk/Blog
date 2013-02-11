@@ -4,13 +4,18 @@ import mx.com.robertoleon.seguridad.Usuario
 
 class Post {
 
+    static hasMany = [comentarios:Comentario]
+
     String titulo
     String categoria
     String descripcion
     Usuario dueno
     Date fechaCracion
-    List<Comentario> comentarios
+    Integer lecturas = 0
+    Integer votos = 0
 
     static constraints = {
+
+
     }
 }

@@ -6,6 +6,8 @@ class Usuario {
 
     String username
     String password
+    Integer reputacion
+    boolean votante
     boolean enabled
     boolean accountExpired
     boolean accountLocked

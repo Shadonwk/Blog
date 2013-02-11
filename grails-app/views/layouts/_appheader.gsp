@@ -6,8 +6,9 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </a>
-      <a class="brand" href="#">Anelisse</a>
+        <g:link class="brand" controller="blog" action="list"> Anelisse</g:link>
       <div class="nav-collapse collapse">
+
         <sec:ifLoggedIn>
             <div class="btn-group navbar-text pull-right">
 
@@ -26,12 +27,11 @@
             </div>
         </sec:ifLoggedIn>
         <ul class="nav">
-          <li><a href="#entidades">Inicio</a></li>
-          <li><a href="#entidades">Blogs</a></li>
-          <li><a href="#reportes">Foros de discusión</a></li>
-          <li><a href="#graficas">Encuestas</a></li>
+          <li><g:link controller="blog" action="list">Blog</g:link></li>
+          <li><a href="#">Foros de discusión</a></li>
+          <li><a href="#">Encuestas</a></li>
           <li><g:link controller="usuario" action="list">Usuarios</g:link> </li>
-          <li><a href="#acerca">Acerca de Anelisse</a></li>
+          <li><a href="#">Acerca de Anelisse</a></li>
 
             <sec:ifLoggedIn>
                 <li><g:link controller='logout' >Salir</g:link></li>

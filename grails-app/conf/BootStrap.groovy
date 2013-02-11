@@ -1,6 +1,8 @@
 import mx.com.robertoleon.seguridad.Usuario
 import mx.com.robertoleon.seguridad.Rol
 import mx.com.robertoleon.seguridad.UsuarioRol
+import mx.com.robertoleon.blog.Post
+import mx.com.robertoleon.blog.Comentario
 
 class BootStrap {
 
@@ -21,6 +23,8 @@ class BootStrap {
                   //  nivelAcceso: "completo",
 
                     enabled:true,
+                    votante: true,
+                    reputacion: 30,
                   //  usuarioAlta:0,
                   //  fechaAlta:new Date(),
                     accountExpired:false,
@@ -37,6 +41,8 @@ class BootStrap {
                     //  nivelAcceso: "completo",
 
                     enabled:true,
+                    votante: false,
+                    reputacion: 10,
                     //  usuarioAlta:0,
                     //  fechaAlta:new Date(),
                     accountExpired:false,
@@ -50,6 +56,30 @@ class BootStrap {
             UsuarioRol.create testUser, rolUsuario, true
 
 
+
+            def postPrueba = new Post(
+                    titulo :"Post de prueba",
+                    categoria : "Grails",
+                    descripcion: """Este es una entrada al demo de prueba el cual puede ser editada o eliminada
+                        desde el panel de control""",
+                    dueno: testAdmin ,
+                    lecturas: 20,
+                    votos: 28,
+                    fechaCracion: new Date()
+
+            ).save(failOnError: true)
+
+            def postPrueba2 = new Post(
+                    titulo :"Post de prueba número 2",
+                    categoria : "Grails",
+                    descripcion: """En el siguiente tutorial mostraremos como se realiza la configuración de
+                        Spring Security para Grails . . .""",
+                    dueno: testAdmin ,
+                    lecturas: 2,
+                    votos: 4,
+                    fechaCracion: new Date()
+
+            ).save(failOnError: true)
 
         }
 

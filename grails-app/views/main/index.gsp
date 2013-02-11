@@ -13,8 +13,8 @@
 
 <body>
 <div class="hero-unit">
-    <h1>Blog</h1>
+    <h1>Anelisse</h1>
 
-    <p>Este es el main aqui aparecera el listado de post</p>
+    <p>Página principal Anelisse :D procede a visitar el blog desde el menu superior o el de la izquiera espero que te guste...</p>
 </div>
 </body>

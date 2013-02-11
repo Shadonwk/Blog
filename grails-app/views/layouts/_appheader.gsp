@@ -6,7 +6,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </a>
-        <g:link class="brand" controller="blog" action="list"> Anelisse</g:link>
+        <g:link class="brand" controller="main" action="index"> Anelisse</g:link>
       <div class="nav-collapse collapse">
 
         <sec:ifLoggedIn>

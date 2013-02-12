@@ -1,28 +1,26 @@
-<%@ page import="mx.com.robertoleon.blog.Comentario" %>
-
-
-
-<div class="fieldcontain ${hasErrors(bean: comentarioInstance, field: 'descripcion', 'error')} ">
-	<label for="descripcion">
-		<g:message code="comentario.descripcion.label" default="Descripcion" />
-		
-	</label>
-	<g:textField name="descripcion" value="${comentarioInstance?.descripcion}"/>
+<strong> Usuario:</strong> <sec:username/>
+<br>
+<div class="control-group">
+    <div class="controls">
+        <g:hiddenField name="idPost"value="${comentario?.post.id}"/>
+    </div>
+</div>
+<div class="control-group">
+    <label class="control-label" for="titulo"> Título *
+    </label>
+    <div class="controls">
+        <g:textField name="titulo" required=""
+                     value="${comentario?.titulo}" />
+    </div>
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: comentarioInstance, field: 'post', 'error')} required">
-	<label for="post">
-		<g:message code="comentario.post.label" default="Post" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:select id="post" name="post.id" from="${mx.com.robertoleon.blog.Post.list()}" optionKey="id" required="" value="${comentarioInstance?.post?.id}" class="many-to-one"/>
+<div class="control-group">
+    <label class="control-label" for="descripcion"> Descripción *
+    </label>
+    <div class="controls">
+        <g:textArea cols="20" rows="10" name="descripcion" required=""
+                     value="${comentario?.descripcion}" />
+    </div>
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: comentarioInstance, field: 'titulo', 'error')} ">
-	<label for="titulo">
-		<g:message code="comentario.titulo.label" default="Titulo" />
-		
-	</label>
-	<g:textField name="titulo" value="${comentarioInstance?.titulo}"/>
-</div>
 

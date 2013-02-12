@@ -37,8 +37,9 @@ class PostController {
             redirect(action: "list")
             return
         }
-
-        [post: postInstance]
+        def comentario = new Comentario()
+        comentario.post = postInstance
+        [post: postInstance, comentario:comentario]
     }
 
     def edit(Long id) {

@@ -12,6 +12,6 @@ class Comentario {
 
     static constraints = {
         titulo(blank: false)
-        descripcion(blank: false)
+        descripcion(blank: false, maxSize: 1000)
     }
 }

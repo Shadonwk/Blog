@@ -12,4 +12,17 @@
     <br><br><br>
 </g:each>
 
+<div id="nuevoComentario">
+    <sec:ifLoggedIn>
+        <g:render template="/comentario/create"/>
+    </sec:ifLoggedIn>
+    <sec:ifNotLoggedIn>
+        <br><br><br>
+        Debes ser usuario registrado para poder comentar,
+        <g:link controller="login" action="auth"> inicia sessión</g:link>  ó
+        <g:link controller="usuario" action="create">registrate aquí</g:link>
+    </sec:ifNotLoggedIn>
+
+</div>
+
 

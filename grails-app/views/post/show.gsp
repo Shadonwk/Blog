@@ -18,20 +18,12 @@
     <br>
     <h4>Comentarios:</h4>
     <br>
+
     <div id="comentarios">
         <g:render template="/comentario/listComentarios" model="[post:post]"/>
     </div>
-    <div id="nuevoComentario">
-        <sec:ifLoggedIn>
-                <g:render template="/comentario/create"/>
-        </sec:ifLoggedIn>
-        <sec:ifNotLoggedIn>
-            <br><br><br>
-            Debes ser usuario registrado para poder comentar,
-            <g:link controller="usuario" action="create">registrate aquí</g:link>
-        </sec:ifNotLoggedIn>
 
-    </div>
+
 
 	</body>
 </html>

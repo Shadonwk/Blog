@@ -28,14 +28,15 @@ class ComentarioController {
         comentario.fechaCreacion = new Date()
         if (!comentario.save(flush: true)) {
             flash.message= "Complete todos los campos"
-            render(template: "create", model: [comentario:comentario])
+            render(template: "listComentarios", model: [comentario:comentario, post:post])
             return
         }
 
         flash.message = message(code: 'default.created.message', args: [message(code: 'comentario.label', default: 'Comentario'), comentario.id])
         def nuevoComentario= new Comentario()
         nuevoComentario.post=post
-        render(template: "create", model: [comentario:nuevoComentario])
+        render(template: "listComentarios", model: [comentario:nuevoComentario, post:post])
+
     }
 
     def show(Long id) {

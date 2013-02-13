@@ -6,6 +6,6 @@
 
 <g:form>
     <g:render template="/comentario/form"/>
-    <g:submitToRemote value="Post" class="btn" update="nuevoComentario,comentarios"
+    <g:submitToRemote value="Post" class="btn" update="comentarios"
                       url="[controller:'comentario', action:'save']"/>
 </g:form>

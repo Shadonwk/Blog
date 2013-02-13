@@ -15,7 +15,7 @@ class Post {
     Integer votos = 0
 
     static constraints = {
-
+        descripcion(maxSize: 2000)
 
     }
 }

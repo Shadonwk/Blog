@@ -26,7 +26,7 @@ environments {
     production {
         dataSource {
             driverClassName = "com.mysql.jdbc.Driver"
-            dbCreate = "create-drop"
+            dbCreate = "update"
             url = "jdbc:mysql://mysql-blogprueba.jelastic.websolute.net.br/devDv?autoReconnect=true"
             pooled = true
             username= "root"

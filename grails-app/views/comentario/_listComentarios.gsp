@@ -1,6 +1,6 @@
 
-
-<g:each in="${post.comentarios}" status="i" var="comentario">
+<g:if test="${post.comentarios}">
+<g:each in="${post.comentarios.sort{it.id}}" status="i" var="comentario">
 
     <hr>
     <div class="span9"><h5>${comentario.titulo?.encodeAsHTML()}</h5></div>
@@ -11,7 +11,8 @@
 
     <br><br><br>
 </g:each>
-
+</g:if>
+<g:else>No hay comentarios que mostrar</g:else>
 <div id="nuevoComentario">
     <sec:ifLoggedIn>
         <g:render template="/comentario/create"/>

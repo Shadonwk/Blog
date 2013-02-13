@@ -33,6 +33,7 @@ class PostController {
 
     def show(Long id) {
         def postInstance = Post.get(id)
+        postInstance.lecturas+=1
         if (!postInstance) {
             flash.message = message(code: 'default.not.found.message', args: [message(code: 'post.label', default: 'Post'), id])
             redirect(action: "list")

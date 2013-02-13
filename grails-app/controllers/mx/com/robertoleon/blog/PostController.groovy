@@ -21,6 +21,7 @@ class PostController {
 
     def save() {
         def postInstance = new Post(params)
+        postInstance.fechaCracion = new Date()
         if (!postInstance.save(flush: true)) {
             render(view: "create", model: [postInstance: postInstance])
             return

@@ -13,7 +13,7 @@ class BlogController {
 
     def list(Integer max) {
         params.max = Math.min(max ?: 10, 100)
-        def resultados = Post.list()
+        def resultados = Post.list(sort:'id', order: 'desc')
 
         println resultados
         [posts:resultados,postTotal:resultados.size(),blogInstanceList: Blog.list(params), blogInstanceTotal: Blog.count()]

@@ -12,17 +12,11 @@
         <div class="alert alert-info">${flash.message}</div>
     </g:if>
 
+    <br><br>
 
-        <g:render template="show" model="${[usuario:usuario]}"/>
+    Felicidades <strong>${usuario.username}</strong> ahora puedes <g:link controller="login"
+                                        action="auth"> iniciar sesión!!</g:link>
 
-    Felicidades ahora puedes iniciar sesión!!
-    %{--<g:form>
-        <fieldset class="buttons">
-            <g:hiddenField name="id" value="${usuario?.id}" />
-            <g:link class="btn btn-primary" action="edit" id="${usuario?.id}"><g:message code="default.button.edit"/></g:link>
-            <g:actionSubmit class="btn btn-danger" action="delete" value="${message(code: 'default.button.delete')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" />
-        </fieldset>
-    </g:form>--}%
 </div>
 
 </body>

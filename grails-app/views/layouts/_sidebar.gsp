@@ -1,13 +1,55 @@
 <div class="well sidebar-nav">
-  <ul class="nav nav-list">
+    <strong>Menu</strong>
+    <ul class="nav nav-list">
 
       %{--<sec:ifLoggedIn>
           <li><a href="#entidades">Mi Blog</a></li>
       </sec:ifLoggedIn>--}%
+
       <li><g:link controller="blog" action="list"> Blog</g:link></li>
       <li><a href="#">Foros de discusión</a></li>
       <li><a href="#">Encuestas</a></li>
 
 
-  </ul>
+    </ul>
+</div>
+
+<div class="well sidebar-nav">
+    <strong>Encuesta</strong>
+    <ul class="nav nav-list">
+
+        %{--<sec:ifLoggedIn>
+            <li><a href="#entidades">Mi Blog</a></li>
+        </sec:ifLoggedIn>--}%
+        <li>Aqui aparecera la encuesta actual</li>
+
+
+    </ul>
+</div>
+
+<div class="well sidebar-nav">
+    <strong>Comentarios recientes</strong>
+    <ul class="nav nav-list">
+
+        %{--<sec:ifLoggedIn>
+            <li><a href="#entidades">Mi Blog</a></li>
+        </sec:ifLoggedIn>--}%
+        <li>Lista de los ultimos comentarios de cualquier tema</li>
+
+
+    </ul>
+</div>
+
+<div class="well sidebar-nav">
+    <strong>Usuarios</strong>
+    <ul class="nav nav-list">
+
+        %{--<sec:ifLoggedIn>
+            <li><a href="#entidades">Mi Blog</a></li>
+        </sec:ifLoggedIn>--}%
+
+        <li>Estadisticas de usuarios en linea</li>
+
+
+    </ul>
 </div>

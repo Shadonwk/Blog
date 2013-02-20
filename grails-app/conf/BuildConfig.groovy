@@ -44,6 +44,7 @@ grails.project.dependency.resolution = {
         runtime ":twitter-bootstrap:2.1.0.1"
         compile ":jquery-ui:1.8.15"
         compile ":spring-security-core:1.2.7.3"
+        compile ":joda-time:1.4"
 
         // Uncomment these (or add new ones) to enable additional resources capabilities
         //runtime ":zipped-resources:1.0"

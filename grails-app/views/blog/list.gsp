@@ -23,7 +23,7 @@
         <g:each in="${posts}" status="i" var="post">
             <div class="span9"><h3><g:link controller="post" action="show" id="${post.id}">${post.titulo?.encodeAsHTML()}</g:link></h3></div>
             <div class="span9">Enviado: ${post.fechaCracion.toLocaleString()?.encodeAsHTML()} en ${post.categoria.toString()?.encodeAsHTML()}<br></div>
-            <div class="span9">${post.descripcion}<br><br></div>
+            <div class="span9">${post.resumen}<br><br></div>
             <div class="clearfix"></div>
             <div class="span2">${post.comentarios.size()} Comentarios</div>
             <div class="span2">${post.lecturas} Lecturas</div>

@@ -1,3 +1,4 @@
+<%@ page import="mx.com.robertoleon.blog.Comentario" %>
 <div class="well sidebar-nav">
     <strong>Menu</strong>
     <ul class="nav nav-list">
@@ -31,12 +32,8 @@
     <strong>Comentarios recientes</strong>
     <ul class="nav nav-list">
 
-        %{--<sec:ifLoggedIn>
-            <li><a href="#entidades">Mi Blog</a></li>
-        </sec:ifLoggedIn>--}%
-        <li>Lista de los ultimos comentarios de cualquier tema</li>
-
-
+        <g:render template="/comentario/sideBarComentarios" model="[comentarios:Comentario.list()]"></g:render>
+        <br>
     </ul>
 </div>
 

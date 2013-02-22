@@ -8,6 +8,7 @@ class Post {
 
     String titulo
     String categoria
+    String resumen
     String descripcion
     Usuario dueno
     Date fechaCracion
@@ -16,6 +17,6 @@ class Post {
 
     static constraints = {
         descripcion(maxSize: 2000)
-
+        resumen(maxSize: 2000)
     }
 }

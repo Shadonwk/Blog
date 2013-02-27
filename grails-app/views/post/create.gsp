@@ -1,39 +1,35 @@
-<%@ page import="mx.com.robertoleon.blog.Post" %>
 <!doctype html>
 <html>
-	<head>
-		<meta name="layout" content="main">
-		<g:set var="entityName" value="${message(code: 'post.label', default: 'Post')}" />
-		<title><g:message code="default.create.label" args="[entityName]" /></title>
-	</head>
-	<body>
-		<a href="#create-post" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
-		<div class="nav" role="navigation">
-			<ul>
-				<li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
-				<li><g:link class="list" action="list"><g:message code="default.list.label" args="[entityName]" /></g:link></li>
-			</ul>
-		</div>
-		<div id="create-post" class="content scaffold-create" role="main">
-			<h1><g:message code="default.create.label" args="[entityName]" /></h1>
-			<g:if test="${flash.message}">
-			<div class="message" role="status">${flash.message}</div>
-			</g:if>
-			<g:hasErrors bean="${postInstance}">
-			<ul class="errors" role="alert">
-				<g:eachError bean="${postInstance}" var="error">
-				<li <g:if test="${error in org.springframework.validation.FieldError}">data-field-id="${error.field}"</g:if>><g:message error="${error}"/></li>
-				</g:eachError>
-			</ul>
-			</g:hasErrors>
-			<g:form action="save" >
-				<fieldset class="form">
-					<g:render template="form"/>
-				</fieldset>
-				<fieldset class="buttons">
-					<g:submitButton name="create" class="save" value="${message(code: 'default.button.create.label', default: 'Create')}" />
-				</fieldset>
-			</g:form>
-		</div>
-	</body>
+    <head>
+        <meta name="layout" content="main">
+        <title>Crear nuevo Post</title>
+    </head>
+
+    <body>
+        <div id="main-div">
+
+        <h3>Nuevo Post</h3>
+
+        <g:if test="${flash.message}">
+            <div class="alert alert-info">${flash.message?.encodeAsHTML()}</div>
+        </g:if>
+
+        <g:hasErrors bean="${post}">
+            <div class="alert alert-error">
+                <ul>
+                    <g:eachError bean="${post}" var="error">
+                        <li><g:message error="${post}"/></li>
+                    </g:eachError>
+                </ul>
+            </div>
+        </g:hasErrors>
+
+        <g:form action="save">
+            <g:render template="form"/>
+            <g:submitButton name="create" class="btn btn-primary" value="Crear Post" />
+        </g:form>
+
+
+        </div>
+    </body>
 </html>

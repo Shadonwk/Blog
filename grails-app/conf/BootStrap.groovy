@@ -3,10 +3,16 @@ import mx.com.robertoleon.seguridad.Rol
 import mx.com.robertoleon.seguridad.UsuarioRol
 import mx.com.robertoleon.blog.Post
 import mx.com.robertoleon.blog.Comentario
+import groovy.sql.Sql
 
 class BootStrap {
 
+    def grailsApplication
+    def dataSource
+
     def init = { servletContext ->
+
+        loadSqlData("catalogos")
 
         if (!Rol.count()){
 
@@ -112,5 +118,28 @@ class BootStrap {
 
     }
     def destroy = {
+    }
+
+    def loadSqlData(archivo) {
+        println "Entra a cargar el CATALOGO"
+        try {
+            def is = grailsApplication.mainContext.getResource("classpath:sql/${archivo}.sql").inputStream
+            println is
+            def db = new Sql(dataSource)
+            println db
+            println "::::::::: Carga ${archivo}... 0% :::::::::"
+            is.eachLine { line ->
+                // Descomentar  println si no carga al 100% para ver donde
+                // falló. Nunca hacer commit descomentado
+
+                    println line
+                    db.executeUpdate(line)
+
+            }
+            println "::::::::: Carga ${archivo}... 100% :::::::::"
+        } catch (ex) {
+            println "ocurrio algun error"
+            ex.printStackTrace()
+        }
     }
 }

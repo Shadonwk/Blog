@@ -5,6 +5,7 @@ import org.springframework.dao.DataIntegrityViolationException
 class PostController {
 
     static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
+    def springSecurityService
 
     def index() {
         redirect(action: "list", params: params)
@@ -16,19 +17,24 @@ class PostController {
     }
 
     def create() {
-        [postInstance: new Post(params)]
+        [post: new Post(params)]
     }
 
     def save() {
-        def postInstance = new Post(params)
-        postInstance.fechaCracion = new Date()
-        if (!postInstance.save(flush: true)) {
-            render(view: "create", model: [postInstance: postInstance])
+        println "params"
+        println params
+        def post = new Post(params)
+        post.fechaCracion = new Date()
+        post.dueno = springSecurityService.currentUser
+        if (!post.save()) {
+            println "error "
+            println post
+            render(view: "create", model: [post: post])
             return
         }
 
-        flash.message = message(code: 'default.created.message', args: [message(code: 'post.label', default: 'Post'), postInstance.id])
-        redirect(action: "show", id: postInstance.id)
+        flash.message = message(code: 'default.created.message', args: [message(code: 'post.label', default: 'Post'), post.id])
+        redirect(action: "show", id: post.id)
     }
 
     def show(Long id) {

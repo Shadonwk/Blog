@@ -100,15 +100,12 @@ grails.plugins.springsecurity.userLookup.authorityJoinClassName = 'mx.com.robert
 grails.plugins.springsecurity.authority.className = 'mx.com.robertoleon.seguridad.Rol'
 grails.plugins.springsecurity.password.algorithm = 'MD5'
 
-grails.plugins.springsecurity.securityConfigType = "InterceptUrlMap"
-grails.plugins.springsecurity.interceptUrlMap = [
-        '/js/**':             ['IS_AUTHENTICATED_ANONYMOUSLY'],
-        '/css/**':            ['IS_AUTHENTICATED_ANONYMOUSLY'],
-        '/images/**':         ['IS_AUTHENTICATED_ANONYMOUSLY'],
-        '/login/**':          ['IS_AUTHENTICATED_ANONYMOUSLY'],
-        '/logout/**':         ['IS_AUTHENTICATED_ANONYMOUSLY'],
-        '/usuario/list':      ['ROLE_USUARIO'],
-        '/usuario/create':    ['IS_AUTHENTICATED_ANONYMOUSLY'],
-        '/*':                 ['IS_AUTHENTICATED_ANONYMOUSLY']
-]
+grails.plugins.springsecurity.requestMap.className = 'mx.com.robertoleon.seguridad.Requestmap'
+grails.plugins.springsecurity.requestMap.urlField = 'url'
+grails.plugins.springsecurity.requestMap.configAttributeField = 'configAttribute'
+grails.plugins.springsecurity.securityConfigType = 'Requestmap'
+// Any requested URL that does not have a corresponding rule will be denied to all users.
+grails.plugins.springsecurity.rejectIfNoRule = true
+
+
 

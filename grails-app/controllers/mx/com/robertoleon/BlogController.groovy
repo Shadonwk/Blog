@@ -103,4 +103,8 @@ class BlogController {
             redirect(action: "show", id: id)
         }
     }
+
+    def acercaDe(){
+
+    }
 }

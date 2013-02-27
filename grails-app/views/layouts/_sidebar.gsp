@@ -8,8 +8,12 @@
       </sec:ifLoggedIn>--}%
 
       <li><g:link controller="blog" action="list"> Blog</g:link></li>
+      <sec:ifAnyGranted roles="ROLE_ADMIN">
+          <ul><li><g:link controller="post" action="create">Nuevo Post</g:link> </li></ul>
+      </sec:ifAnyGranted>
       <li><a href="#">Foros de discusión</a></li>
       <li><a href="#">Encuestas</a></li>
+      <li><g:link controller="usuario" action="list">Usuarios</g:link> </li>
 
 
     </ul>

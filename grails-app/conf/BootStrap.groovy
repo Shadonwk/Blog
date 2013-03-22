@@ -21,39 +21,29 @@ class BootStrap {
 
 
             def testAdmin = new Usuario(
-                  //  nombreCompleto:"J. Roberto León Cruz",
+
                     username:"admin",
                     password:"admin",
-                   // correo: "rleon@sintelti.com.mx",
-                  //  departamento: "sistemas",
-                  //  nivelAcceso: "completo",
-
                     enabled:true,
                     votante: true,
                     reputacion: 30,
-                  //  usuarioAlta:0,
-                  //  fechaAlta:new Date(),
                     accountExpired:false,
                     accountLocked:false,
                     passwordExpired:false
+
             ).save(failOnError: true)
 
             def testUser = new Usuario(
-                    //  nombreCompleto:"J. Roberto León Cruz",
+
                     username:"user",
                     password:"user",
-                    // correo: "rleon@sintelti.com.mx",
-                    //  departamento: "sistemas",
-                    //  nivelAcceso: "completo",
-
                     enabled:true,
                     votante: false,
                     reputacion: 10,
-                    //  usuarioAlta:0,
-                    //  fechaAlta:new Date(),
                     accountExpired:false,
                     accountLocked:false,
                     passwordExpired:false
+
             ).save(failOnError: true)
 
             UsuarioRol.create testAdmin, rolAdmin, true
@@ -130,11 +120,8 @@ class BootStrap {
             println "::::::::: Carga ${archivo}... 0% :::::::::"
             is.eachLine { line ->
                 // Descomentar  println si no carga al 100% para ver donde
-                // falló. Nunca hacer commit descomentado
-
                     println line
                     db.executeUpdate(line)
-
             }
             println "::::::::: Carga ${archivo}... 100% :::::::::"
         } catch (ex) {

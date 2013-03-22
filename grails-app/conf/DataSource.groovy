@@ -27,10 +27,10 @@ environments {
         dataSource {
             driverClassName = "com.mysql.jdbc.Driver"
             dbCreate = "create-drop"
-            url = "jdbc:mysql://mysql-blogprueba.jelastic.websolute.net.br/devDv?autoReconnect=true"
+            url = "jdbc:mysql://mysql-env-1899517.jelastic.websolute.net.br/devDv?autoReconnect=true"
             pooled = true
             username= "root"
-            password = "JE606CQ1za"
+            password = "Gp6Fst0mO2"
             properties {
                maxActive = -1
                minEvictableIdleTimeMillis=1800000

@@ -41,4 +41,8 @@ class Usuario {
         password = springSecurityService.encodePassword(password)
     }
 
+    String toString(){
+        username
+    }
+
 }

@@ -1,20 +1,28 @@
 <%@ page import="mx.com.robertoleon.blog.Comentario" %>
+
+
+<sec:ifAnyGranted roles="ROLE_ADMIN">
+    <div class="well sidebar-nav">
+        <strong>Configuraciones</strong>
+        <ul class="nav nav-list">
+            <li><g:link controller="configuracionesGenerales" action="index"> Generales del Sitio</g:link></li>
+        </ul>
+    </div>
+</sec:ifAnyGranted>
+
+
 <div class="well sidebar-nav">
     <strong>Menu</strong>
     <ul class="nav nav-list">
 
-      %{--<sec:ifLoggedIn>
-          <li><a href="#entidades">Mi Blog</a></li>
-      </sec:ifLoggedIn>--}%
-
-      <li><g:link controller="blog" action="list"> Blog</g:link></li>
-      <sec:ifAnyGranted roles="ROLE_ADMIN">
-          <ul><li><g:link controller="post" action="create">Nuevo Post</g:link> </li></ul>
-      </sec:ifAnyGranted>
-      <li><a href="#">Foros de discusión</a></li>
-      <li><a href="#">Encuestas</a></li>
-      <li><g:link controller="usuario" action="list">Usuarios</g:link> </li>
-
+        <li><g:link controller="blog" action="list"> Blogs</g:link></li>
+        <sec:ifLoggedIn>
+            <ul><li><g:link controller="blog" action="miBlog">Mi Blog</g:link></li></ul>
+            <ul><li><g:link controller="post" action="create">Nuevo Post</g:link> </li></ul>
+        </sec:ifLoggedIn>
+        <li><a href="#">Foros de discusión</a></li>
+        <li><a href="#">Encuestas</a></li>
+        <li><g:link controller="usuario" action="list">Usuarios</g:link> </li>
 
     </ul>
 </div>

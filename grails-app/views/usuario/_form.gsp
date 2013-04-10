@@ -17,7 +17,7 @@
     </label>
 
     <div class="controls">
-        <g:textField name="password" required="" value="${usuario?.password}" />
+        <g:passwordField name="password" required="" value="${usuario?.password}" />
     </div>
 
 </div>

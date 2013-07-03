@@ -17,7 +17,7 @@
         <div class="alert alert-error">
             <ul>
                 <g:eachError bean="${usuario}" var="error">
-                    <li><g:message error="${usuario}"/></li>
+                    <li><g:message error="${error}"/></li>
                 </g:eachError>
             </ul>
         </div>

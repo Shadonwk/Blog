@@ -22,9 +22,9 @@ class UsuarioController {
 
     def save(){
         def usuario = new Usuario(params)
-
-        if (!usuario.save(flush: true)) {
-            render(view: "create", model: [anexo: usuario])
+        usuario.fechaAlta = new Date()
+        if (!usuario.save()) {
+            render(view: "create", model: [usuario: usuario])
             return
         }
 

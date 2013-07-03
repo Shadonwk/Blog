@@ -21,3 +21,15 @@
     </div>
 
 </div>
+
+<div class="control-group">
+
+    <label class="control-label" for="email">
+        <g:message code="usuario.email"/> *
+    </label>
+
+    <div class="controls">
+        <g:textField name="email" required="" value="${usuario?.email}" />
+    </div>
+
+</div>

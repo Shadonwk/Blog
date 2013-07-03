@@ -14,45 +14,10 @@ class BootStrap {
 
         loadSqlData("catalogos")
 
-        if (!Rol.count()){
-
-            def rolAdmin = new Rol(authority: 'ROLE_ADMIN').save(failOnError: true)
-            def rolUsuario = new Rol(authority: 'ROLE_USUARIO').save(failOnError: true)
 
 
-            def testAdmin = new Usuario(
 
-                    username:"admin",
-                    password:"admin",
-                    enabled:true,
-                    votante: true,
-                    reputacion: 30,
-                    accountExpired:false,
-                    accountLocked:false,
-                    passwordExpired:false
-
-            ).save(failOnError: true)
-
-            def testUser = new Usuario(
-
-                    username:"user",
-                    password:"user",
-                    enabled:true,
-                    votante: false,
-                    reputacion: 10,
-                    accountExpired:false,
-                    accountLocked:false,
-                    passwordExpired:false
-
-            ).save(failOnError: true)
-
-            UsuarioRol.create testAdmin, rolAdmin, true
-            UsuarioRol.create testAdmin, rolUsuario, true
-
-            UsuarioRol.create testUser, rolUsuario, true
-
-
-            def postPrueba = new Post(
+           /* def postPrueba = new Post(
                     titulo :"Como utilizar el Bootstrap de twitter en Grails",
                     categoria : "Grails",
                     resumen: "Twitter Bootstrap es una solución flexible que ofrece muchas más potencia que el CSS normal. Conseguimos una serie de características extras como las declaraciones anidadas, mixins, operaciones y funciones de color. Es fácil de implementar en el código tan sólo incluyendo la declaración en la cabecera y usar los componentes disponibles.\n" +
@@ -102,9 +67,9 @@ class BootStrap {
                     votos: 4,
                     fechaCracion: new Date()
 
-            ).save(failOnError: true)
+            ).save(failOnError: true)*/
 
-        }
+
 
     }
     def destroy = {

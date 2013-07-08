@@ -23,6 +23,9 @@
         <li><a href="#">Foros de discusión</a></li>
         <li><a href="#">Encuestas</a></li>
         <li><g:link controller="usuario" action="list">Usuarios</g:link> </li>
+        <sec:ifLoggedIn>
+            <ul><li><g:link controller="usuario" action="miCuenta">Mi Cuenta</g:link> </li></ul>
+        </sec:ifLoggedIn>
 
     </ul>
 </div>

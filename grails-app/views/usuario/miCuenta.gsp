@@ -11,7 +11,11 @@
         <div class="alert alert-info">${flash.message}</div>
     </g:if>
 
-    <g:render template="list" model="${[lista:usuarioList,total:usuarioTotal]}"/>
+    <g:remoteLink update="detalle" controller="usuario" action="cuenta">Cuenta</g:remoteLink>
+    |
+    <g:remoteLink update="detalle" controller="usuario" action="perfil">Informacion personal</g:remoteLink>
+
+    <div id="detalle"></div>
 </div>
 
 

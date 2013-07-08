@@ -17,6 +17,8 @@ class Usuario {
     String apellidoMaterno
     String email
     Date fechaAlta
+    Archivo imagen
+
 
     static constraints = {
         username blank: false, unique: true
@@ -25,6 +27,7 @@ class Usuario {
         apellidoPaterno nullable: true
         apellidoMaterno nullable: true
         email email: true, nullable: false
+        imagen nullable: true
     }
 
     static mapping = {

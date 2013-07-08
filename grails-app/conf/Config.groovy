@@ -107,5 +107,30 @@ grails.plugins.springsecurity.securityConfigType = 'Requestmap'
 // Any requested URL that does not have a corresponding rule will be denied to all users.
 grails.plugins.springsecurity.rejectIfNoRule = true
 
+// Directorio raíz,
+def appRootDir = "C:"
 
+
+// Directorio base a partir del cual se arman las rutas de directorios
+def appBaseDir = appRootDir + "/Anelisse"
+
+// Directorio para almacenamiento de los archivos subidos a la aplicación
+def appArchivosDir = appBaseDir + "/perfilesImg"
+
+
+// Configuración para el almacenamiento de archivos
+archivoService {
+    // Directorio para almacenar los archivos
+    path = appArchivosDir
+
+    // Cada nivel tiene 100 carpetas desde 00/ hasta 99/
+    // Con 3 niveles tenemos 100*100*100 = 1,000,000 carpetas
+    nesting = 3
+
+    // Configuración de cada grupo de archivos
+    imagen{
+        maxSize = 1024 * 1024 * 2 //2 mbytes
+        allowedExtensions = ["jpg", "gif", "png"]
+    }
+}
 

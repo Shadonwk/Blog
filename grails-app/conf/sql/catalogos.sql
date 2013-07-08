@@ -9,8 +9,8 @@ insert into usuario (id, version, username, "password", enabled, votante, reputa
 
 
 --relacion usuario rol
-insert into usuario_rol ( rol_id , usuario_id ) values (1,1)
-insert into usuario_rol ( rol_id , usuario_id ) values (2,2)
+insert into usuario_rol ( rol_id , usuario_id ) values (1,1);
+insert into usuario_rol ( rol_id , usuario_id ) values (2,2);
 
 
 insert into requestmap (id, version, url, config_attribute) values (1, 0, '/admin/dbconsole/**', 'IS_AUTHENTICATED_ANONYMOUSLY');

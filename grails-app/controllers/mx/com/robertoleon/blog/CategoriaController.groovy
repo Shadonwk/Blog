@@ -12,7 +12,7 @@ class CategoriaController {
 
     def list(Integer max) {
         params.max = Math.min(max ?: 10, 100)
-        [categoriaInstanceList: Categoria.list(params), categoriaInstanceTotal: Categoria.count()]
+        [lista: Categoria.list(params), total: Categoria.count()]
     }
 
     def create() {
@@ -38,7 +38,7 @@ class CategoriaController {
             return
         }
 
-        [categoriaInstance: categoriaInstance]
+        [categoria: categoriaInstance]
     }
 
     def edit(Long id) {
@@ -49,7 +49,7 @@ class CategoriaController {
             return
         }
 
-        [categoriaInstance: categoriaInstance]
+        [categoria: categoriaInstance]
     }
 
     def update(Long id, Long version) {

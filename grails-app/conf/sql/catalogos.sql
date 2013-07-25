@@ -27,7 +27,12 @@ insert into requestmap (id, version, url, config_attribute) values (10, 0, '/blo
 insert into requestmap (id, version, url, config_attribute) values (11, 0, '/post/**', 'ROLE_ADMIN, ROLE_USUARIO');
 insert into requestmap (id, version, url, config_attribute) values (12, 0, '/post/show/**', 'IS_AUTHENTICATED_ANONYMOUSLY');
 insert into requestmap (id, version, url, config_attribute) values (13, 0, '/comentario/**', 'ROLE_USUARIO, ROLE_ADMIN');
+insert into requestmap (id, version, url, config_attribute) values (14, 0, '/categoria/**', 'ROLE_ADMIN');
 
+--Categorias
+insert into categoria (id, version, nombre) values (1, 0, 'Groovy');
+insert into categoria (id, version, nombre) values (2, 0, 'Grails');
+insert into categoria (id, version, nombre) values (3, 0, 'Java');
 
 
 --Datos de prueba que deberan ser eliminados cuando se suba a producción

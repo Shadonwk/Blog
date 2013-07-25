@@ -3,9 +3,14 @@
 
 <sec:ifAnyGranted roles="ROLE_ADMIN">
     <div class="well sidebar-nav">
+        <strong>Catalogos</strong>
+        <ul class="nav nav-list">
+            <li><g:link controller="categoria" action="list">Categorías</g:link></li>
+        </ul>
+
         <strong>Configuraciones</strong>
         <ul class="nav nav-list">
-            <li><g:link controller="configuracionesGenerales" action="index"> Generales del Sitio</g:link></li>
+            <li><g:link controller="configuracionesGenerales" action="index">Generales del Sitio</g:link></li>
         </ul>
     </div>
 </sec:ifAnyGranted>

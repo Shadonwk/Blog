@@ -7,7 +7,7 @@ class Post {
     static hasMany = [comentarios:Comentario]
 
     String titulo
-    String categoria
+    Categoria categoria
     String resumen
     String descripcion
     Usuario dueno

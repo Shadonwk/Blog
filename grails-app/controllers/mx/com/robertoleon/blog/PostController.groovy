@@ -21,13 +21,13 @@ class PostController {
     }
 
     def save() {
-        println "params"
-        println params
+
         def post = new Post(params)
         post.fechaCracion = new Date()
         post.dueno = springSecurityService.currentUser
+
         if (!post.save()) {
-            println "error "
+
             println post
             render(view: "create", model: [post: post])
             return

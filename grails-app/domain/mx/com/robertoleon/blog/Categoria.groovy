@@ -6,4 +6,8 @@ class Categoria {
 
     static constraints = {
     }
+
+    String toString(){
+        nombre
+    }
 }

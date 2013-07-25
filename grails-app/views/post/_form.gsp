@@ -1,3 +1,4 @@
+<%@ page import="mx.com.robertoleon.blog.Categoria" %>
 <div class="control-group">
     <label class="control-label" for="titulo">
         Titulo *
@@ -12,7 +13,11 @@
         Categoria *
     </label>
     <div class="controls">
-        <g:textField name="categoria" required="" value="${post?.categoria}"/>
+        <g:select name="categoria.id"
+                  from="${Categoria.list()}"
+                  value="${post?.categoria?.id}"
+                  noSelection="['':'Seleccione una opción']"
+                  optionKey="id"/>
     </div>
 </div>
 

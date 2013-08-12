@@ -10,7 +10,7 @@
 	<body>
 
     <div class="span9"><h1>${post.titulo?.encodeAsHTML()}</h1></div>
-    <div class="span9">Enviado por: ${post.dueno?.encodeAsHTML()} el ${post.fechaCracion.toLocaleString()?.encodeAsHTML()} en ${post.categoria.toString()?.encodeAsHTML()}<br><br><br></div>
+    <div class="span9">Enviado por: ${post.dueno?.encodeAsHTML()} el ${post.fechaCreacion.toLocaleString()?.encodeAsHTML()} en ${post.categoria.toString()?.encodeAsHTML()}<br><br><br></div>
     <div class="span9">${post.descripcion}<br><br><br></div>
     <div class="clearfix"></div>
     <div class="span3">${post.lecturas} Lecturas &nbsp;&nbsp;&nbsp;&nbsp; ${post.votos} Votos</div>

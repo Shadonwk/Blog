@@ -31,6 +31,7 @@
         <sec:ifLoggedIn>
             <ul><li><g:link controller="usuario" action="miCuenta">Mi Cuenta</g:link> </li></ul>
         </sec:ifLoggedIn>
+        <li><g:link controller="tracker" action="list">Envíos recientes</g:link> </li>
 
     </ul>
 </div>

@@ -28,6 +28,7 @@ insert into requestmap (id, version, url, config_attribute) values (11, 0, '/pos
 insert into requestmap (id, version, url, config_attribute) values (12, 0, '/post/show/**', 'IS_AUTHENTICATED_ANONYMOUSLY');
 insert into requestmap (id, version, url, config_attribute) values (13, 0, '/comentario/**', 'ROLE_USUARIO, ROLE_ADMIN');
 insert into requestmap (id, version, url, config_attribute) values (14, 0, '/categoria/**', 'ROLE_ADMIN');
+insert into requestmap (id, version, url, config_attribute) values (15, 0, '/tracker/**', 'IS_AUTHENTICATED_ANONYMOUSLY');
 
 --Categorias
 insert into categoria (id, version, nombre) values (1, 0, 'Groovy');

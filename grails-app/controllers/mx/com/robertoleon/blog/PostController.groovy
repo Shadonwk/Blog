@@ -23,7 +23,7 @@ class PostController {
     def save() {
 
         def post = new Post(params)
-        post.fechaCracion = new Date()
+        post.fechaCreacion = new Date()
         post.dueno = springSecurityService.currentUser
 
         if (!post.save()) {

@@ -30,7 +30,7 @@
 					
 						<th><g:message code="post.dueno.label" default="Dueno" /></th>
 					
-						<g:sortableColumn property="fechaCracion" title="${message(code: 'post.fechaCracion.label', default: 'Fecha Cracion')}" />
+						<g:sortableColumn property="fechaCracion" title="${message(code: 'post.fechaCreacion.label', default: 'Fecha Cracion')}" />
 					
 						<g:sortableColumn property="titulo" title="${message(code: 'post.titulo.label', default: 'Titulo')}" />
 					
@@ -46,7 +46,7 @@
 					
 						<td>${fieldValue(bean: postInstance, field: "dueno")}</td>
 					
-						<td><g:formatDate date="${postInstance.fechaCracion}" /></td>
+						<td><g:formatDate date="${postInstance.fechaCreacion}" /></td>
 					
 						<td>${fieldValue(bean: postInstance, field: "titulo")}</td>
 					

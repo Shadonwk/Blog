@@ -37,7 +37,7 @@ class BootStrap {
                     dueno: testAdmin ,
                     lecturas: 20,
                     votos: 28,
-                    fechaCracion: new Date()
+                    fechaCreacion: new Date()
 
             ).save(failOnError: true)
 
@@ -51,7 +51,7 @@ class BootStrap {
                     dueno: testAdmin ,
                     lecturas: 20,
                     votos: 28,
-                    fechaCracion: new Date()
+                    fechaCreacion: new Date()
 
             ).save(failOnError: true)
 
@@ -65,7 +65,7 @@ class BootStrap {
                     dueno: testAdmin ,
                     lecturas: 2,
                     votos: 4,
-                    fechaCracion: new Date()
+                    fechaCreacion: new Date()
 
             ).save(failOnError: true)*/
 

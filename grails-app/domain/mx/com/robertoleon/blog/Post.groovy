@@ -11,7 +11,8 @@ class Post {
     String resumen
     String descripcion
     Usuario dueno
-    Date fechaCracion
+    Date fechaCreacion
+    Date lastUpdated
     Integer lecturas = 0
     Integer votos = 0
 
@@ -19,4 +20,5 @@ class Post {
         descripcion(maxSize: 2000)
         resumen(maxSize: 2000)
     }
+
 }

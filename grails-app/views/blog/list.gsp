@@ -22,7 +22,7 @@
 
         <g:each in="${posts}" status="i" var="post">
             <div class="span9"><h3><g:link controller="post" action="show" id="${post.id}">${post.titulo?.encodeAsHTML()}</g:link></h3></div>
-            <div class="span9">Enviado por: ${post.dueno?.encodeAsHTML()} el ${post.fechaCracion.toLocaleString()?.encodeAsHTML()} en ${post.categoria.toString()?.encodeAsHTML()}<br></div>
+            <div class="span9">Enviado por: ${post.dueno?.encodeAsHTML()} el ${post.fechaCreacion.toLocaleString()?.encodeAsHTML()} en ${post.categoria.toString()?.encodeAsHTML()}<br></div>
             <div class="span9">${post.resumen}<br><br></div>
             <div class="clearfix"></div>
             <div class="span2">${post.comentarios.size()} Comentarios</div>
@@ -42,7 +42,7 @@
                 <tr>
                     <table class="span9">
                         <tr><td colspan="4"><h3><g:link controller="post" action="show" id="${post.id}">${post.titulo?.encodeAsHTML()}</g:link></h3></td></tr>
-                        <tr><td colspan="4">Enviado: ${post.fechaCracion.toLocaleString()?.encodeAsHTML()} en ${post.categoria.toString()?.encodeAsHTML()}</td></tr>
+                        <tr><td colspan="4">Enviado: ${post.fechaCreacion.toLocaleString()?.encodeAsHTML()} en ${post.categoria.toString()?.encodeAsHTML()}</td></tr>
                         <tr><td><br/></td> </tr>
                         <tr><td colspan="4">${post.descripcion?.encodeAsHTML()}</td></tr>
                         <tr>
